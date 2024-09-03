@@ -6,7 +6,12 @@
     <title>Document</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <nav>
+        <a href="/Admin">Admin</a>
+        <a href="/admin/story/create">Add a story</a>
+      </nav>
+    </header>
     <main>
       <h3>Add story</h3>
       <form action="add_story" method="post">
@@ -17,7 +22,7 @@
         <label for="img">Image</label>
         <input type="text" name="img" />
         <label for="category">Category</label>
-        <select name="cars" id="cars">
+        <select name="category" id="category">
           <option value="voyage">Voyage</option>
         </select>
         <button type="submit">Ajouter la story</button>
