@@ -24,7 +24,8 @@ router.post("/admin/story/create", (req, res) => {
         req.body.category_id
     ])
         .then(() => {
-            res.redirect("../story")
+            console.log(res);
+            res.redirect("/story")
         })
         .catch((error) => console.log(error))
 })
