@@ -13,30 +13,18 @@
         <a href="/">Home</a>
         <a href="/About">About</a>
         <a href="/Contact">Contact</a>
-
-        <% if (locals.isLogged) { %>
-        <a href="/">Logout</a>
-        <% } else { %>
         <a href="/Login">Login</a>
-        <% } %>
-
         <a href="/Admin">Admin</a>
       </nav>
-      <h2>Bienvenue <%= locals.username %></h2>
     </header>
     <main>
-      <section>
-        <h2>Lastest Articles</h2>
-        <div>
-          <% for (const data of datas) { %>
-          <article>
-            <img src="/img/<%= data.img %>" alt="" />
-            <h3><%= data.title %></h3>
-            <a href="/story/<%= data.id %>">Read more</a>
-          </article>
-          <% } %>
-        </div>
-      </section>
+      <form action="/login" method="post">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" />
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" />
+        <button type="submit">Login</button>
+      </form>
     </main>
   </body>
 </html>

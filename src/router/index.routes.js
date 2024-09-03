@@ -1,6 +1,8 @@
 import express from "express";
 import pool from "../config/db.js";
-import { add_story, admin_home, home, story_id } from "../controller/view.js";
+import { home, story_id } from "../controller/view.js";
+import { add_story, admin_home } from "../controller/admin.js";
+
 
 const router = express.Router();
 
@@ -28,6 +30,18 @@ router.post("/admin/story/create", (req, res) => {
             res.redirect("/story")
         })
         .catch((error) => console.log(error))
+})
+
+router.get("/login", (req, res) => {
+    res.render("login");
+})
+
+router.post("/login", (req, res) => {
+    console.log(req.body);
+    console.log(req.session);
+    req.session.user = req.body;
+    req.session.isLogged = true;
+    res.redirect("../");
 })
 
 export default router;

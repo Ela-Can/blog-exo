@@ -4,7 +4,7 @@ const home = (req, res) => {
     const q = "SELECT * FROM story"
     pool.query(q)
         .then(([datas]) => {
-            res.render("home", {datas});
+            res.render("home", { datas });
         })
 }
 
@@ -19,12 +19,4 @@ const story_id = (req, res) => {
         .catch(error => console.log(error));
 }
 
-const admin_home = (req, res) => {
-    res.render("admin/home");
-}
-
-const add_story = (req, res) => {
-    res.render("admin/story/create");
-}
-
-export { home, story_id, admin_home, add_story };
+export { home, story_id };
